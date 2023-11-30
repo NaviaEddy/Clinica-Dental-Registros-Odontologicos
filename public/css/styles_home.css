@@ -1,0 +1,256 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    /*background: linear-gradient(to bottom, rgb(11, 96, 255), #ffffff);
+    color: #fff;*/
+}
+
+.sec1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    height: 100vh;
+    position: relative;
+    right: 15px;
+    /*background-color: crimson;*/
+}
+
+.text_logo{
+    /*background-color: brown;*/
+    color: #0197EB;
+    white-space: nowrap;
+}
+
+.text1 h1{
+    margin-top: 10px;
+    font-size: 35px;
+}
+
+.text_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    top: -1em;
+}
+
+.text_img h2{
+    position: relative;
+    top: -3px;
+    right: 4.5em;
+    font-size: 30px;
+}
+
+.perfil{
+    margin-top: -15px;
+}
+
+.perfil img{
+    width: 40%;
+    border: 3px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.menu{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.menu{
+    border-right: 2px solid rgb(91, 91, 91);
+}
+
+.menu a {
+    display: inline-block; 
+    width: 150px; 
+    text-align: center; 
+    background-color: rgb(30, 150, 255);
+    color: white;
+    border: 1px solid rgb(30, 150, 255);
+    padding: 5px;
+    border-radius: 15px;
+    text-decoration: none;  
+}
+
+.sec2{
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background-color: blueviolet;*/
+}
+
+/*READ DE PACIENTES*/
+.read {
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.pacientes {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/*BOTONES*/
+
+.editar {
+    margin: 0;
+    padding: 5px 13px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.editar:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+.eliminar {
+    margin: 0;
+    padding: 3px;
+    text-decoration: none;
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.eliminar a{
+    color: white;
+    width: 100%;
+    padding: 8px 8px;
+}
+
+.eliminar a:hover{
+    color: red;
+}
+
+.eliminar:hover {
+    background-color: white;
+}
+
+/*create.ejs - edit.ejs*/
+form {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.cancel-button {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.cancel-button:hover {
+    background-color: #c0392b;
+}
+
+/*Formulario cita y boton agregar*/
+.formulario_cita{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.botonagregar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+}

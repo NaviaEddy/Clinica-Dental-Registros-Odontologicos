@@ -1,0 +1,31 @@
+
+<div class="read">
+    <div class="pacientes">
+        <div class="botonagregar">
+            <button class="agregar_cita" id="button_agregar"><a href='javascript:agregar_cita("/registro")' style="color: white;">Agregar</a></button>
+        </div>
+        <table>
+            <tr>
+                <th>N° Cita</th>
+                <th>Fecha</th>
+                <th>Motivo</th>
+                <th>Nombre paciente</th>
+                <th>Acciones</th> 
+            </tr>
+            <% citas.forEach(cita => { %>
+                <tr>
+                    <td><%= cita.id_cita %></td>
+                    <td><%= cita.fecha %></td>
+                    <td><%= cita.motivo %></td>
+                    <td><%= cita.id_paciente %></td>
+                    <td class="botones">
+                        <button class="editar">Editar</button>
+                        <button class="eliminar">Eliminar</a></button>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+        <div id="formulario_cita" class="formulario_cita"></div>
+    </div>
+</div>
+

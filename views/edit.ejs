@@ -1,0 +1,26 @@
+<h1>Editar Usuario</h1>
+<form action="/edit/<%= paciente.id_paciente %>" method="post">
+    <label for="foto">Fotografia:</label>
+    <input type="text" name="foto" value="<%= paciente.foto%>" required>
+
+    <label for="nombre">Nombre y apellido:</label>
+    <input type="text" name="nombre" value="<%= paciente.nombre%>" required>
+
+    <label for="cedula">Cedula:</label>
+    <input type="text" name="cedula" value="<%= paciente.cedula%>" required>
+
+    <label for="direccion">Direccion:</label>
+    <input type="text" name="direccion" value="<%= paciente.direccion%>" required>
+
+    <label for="celular">Celular:</label>
+    <input type="text" name="celular" value="<%= paciente.celular%>" required>
+
+    <label for="doctor">Doctor:</label>
+    <input type="text" name="doctor" value="<%= paciente.doctor%>" required>
+
+    <label for="nacimiento">Fecha de nacimiento:</label>
+    <input type="text" name="nacimiento" value="<%= paciente.fech_nac%>" required>
+
+    <button type="submit">Guardar</button>
+    <a href="/home" class="cancel-button">Cancelar</a>
+</form>

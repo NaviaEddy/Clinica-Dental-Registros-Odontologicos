@@ -1,0 +1,17 @@
+<h1>Crear Cita</h1>
+<form action="/read" method="post">
+    <label for="idcita">N° cita:</label>
+    <input type="text" name="idcita" required>
+
+    <label for="fecha">Fecha:</label>
+    <input type="text" name="fecha" required>
+
+    <label for="motivo">Motivo:</label>
+    <input type="text" name="motivo" required>
+
+    <label for="idpaciente">Nombre paciente:</label>
+    <input type="text" name="idpaciente" required>
+
+    <button type="submit">Guardar</button>
+    <a href='javascript:cita("/read_registro")' class="cancel-button">Cancelar</a>
+</form>

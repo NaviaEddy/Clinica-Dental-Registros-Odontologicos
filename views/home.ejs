@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Dental "Your Smile"</title>
+    <link rel="stylesheet" href="/css/styles_home.css" type="text/css">
+    <link rel="icon" href="/img/Icono_title.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:wght@700&display=swap"
+        rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="container">
+        <section class="sec1">
+            <div class="text_logo">
+                <div class="text1">
+                    <h1>CLINICA DENTAL</h1>
+                </div>
+                <div class="text2">
+                    <div class="text_img">
+                        <div><img src="/img/pngegg.png" alt="logo.png" class="img" width="25%"></div>
+                        <div>
+                            <h2>Your Smile</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="perfil">
+                <img src="/img/perfil_prueba.png" alt="prueba.png">
+                <h1>Dr. Armando Nuñez</h1>
+            </div>
+            <div class="menu">
+                <div><a href='javascript:agregar("/create")'>Agregar paciente</a></div>
+                <div><a href="#" onclick="mostrarEditar()">Editar paciente</a></div>
+                <div><a href="#" onclick="mostrarEliminar()">Eliminar paciente</a></div>
+                <div><a href='javascript:cita("/read_registro")'>Registros</a></div>
+            </div>
+        </section>
+        <section class="sec2">
+            <!-- <div class="buscador">
+                <input type="text" placeholder="buscar paciente" class="buscar">
+                <button type="submit" class="enviar">
+                    <img src="/img/busqueda_1.png" alt="Buscar">
+                </button>
+            </div> -->
+            <div class="contenido" id="contenido"></div>
+        </section>
+    </div>
+
+    <script>
+        //CARGAR EL READ//
+        document.addEventListener("DOMContentLoaded", function() {
+            var url = "./read";
+            var contenido = document.getElementById("contenido");
+            
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    contenido.innerHTML = data;
+                })
+                .catch(error => console.error("Error al cargar la página:", error));
+        });
+
+        //AGREGAR PACIENTES//
+        function agregar(abrir){
+        
+            var paciente = document.getElementById("contenido");
+            paciente.innerHTML = "";
+
+            var ajax = new XMLHttpRequest() //crea el objetov ajax 
+            ajax.open("get", abrir, true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                paciente.innerHTML = ajax.responseText;
+                }
+            }
+            ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+            ajax.send();
+        }
+
+        //EDITAR PACIENTES
+        function editar_paciente(abrir) {
+            var contenedor = document.getElementById('contenido');
+            contenedor.innerHTML = "";
+            var ajax = new XMLHttpRequest() //crea el objetov ajax 
+            ajax.open("get", abrir, true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                    contenedor.innerHTML = ajax.responseText;
+                }
+            }
+            ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+            ajax.send();
+        }
+
+        //MOSTRAR BOTONES//
+        function mostrarEditar() {
+            ocultarAcciones();
+            mostrarAcciones('editar');
+        }
+    
+        function mostrarEliminar() {
+            ocultarAcciones();
+            mostrarAcciones('eliminar');
+        }
+    
+        function ocultarAcciones() {
+            var botones = document.querySelectorAll('.botones button');
+            botones.forEach(function (boton) {
+                boton.style.display = 'none';
+            });
+        }
+    
+        function mostrarAcciones(accion) {
+            var botones = document.querySelectorAll('.botones button');
+            botones.forEach(function (boton) {
+                if (boton.classList.contains(accion)) {
+                    boton.style.display = 'inline-block';
+                }
+            });
+        }
+        
+        //MOSTRAR REGISTRO
+        function cita(abrir){
+            var paciente = document.getElementById("contenido");
+            paciente.innerHTML = "";
+
+            var ajax = new XMLHttpRequest() //crea el objetov ajax 
+            ajax.open("get", abrir, true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                paciente.innerHTML = ajax.responseText;
+                }
+            }
+            ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+            ajax.send();
+        }
+
+        //AGREGAR REGISTRO
+        function agregar_cita(abrir){
+            var cita = document.getElementById("formulario_cita");
+            var boton = document.getElementById("button_agregar");
+            boton.style.display = "none";
+            cita.innerHTML = "";
+
+            var ajax = new XMLHttpRequest() //crea el objetov ajax 
+            ajax.open("get", abrir, true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                cita.innerHTML = ajax.responseText;
+                }
+            }
+            ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+            ajax.send();
+        }
+
+    </script>
+</body>
+</html>

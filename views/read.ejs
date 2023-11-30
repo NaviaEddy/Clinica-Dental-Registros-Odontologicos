@@ -1,0 +1,35 @@
+
+    <div class="read">
+        <div class="pacientes">
+            <table>
+                <tr>
+                    <th>Fotografia</th>
+                    <th>Nombre</th>
+                    <th>Cedula</th>
+                    <th>Direccion</th>
+                    <th>Celular</th>
+                    <th>Doctor</th>
+                    <th>Nacimiento</th>
+                    <th>Acciones</th> 
+                </tr>
+                <% pacientes.forEach(paciente => { %>
+                    <tr>
+                        <td><%= paciente.foto %></td>
+                        <td><%= paciente.nombre %></td>
+                        <td><%= paciente.cedula %></td>
+                        <td><%= paciente.direccion %></td>
+                        <td><%= paciente.celular %></td>
+                        <td><%= paciente.doctor %></td>
+                        <td><%= paciente.fech_nac %></td>
+                        <td class="botones">
+                            <button class="editar" style="display: none" onclick='editar_paciente("/edit/<%= paciente.id_paciente %>")'>Editar</button>
+                            <button class="eliminar" style="display: none"><a href="/delete/<%= paciente.id_paciente %>">Eliminar</a></button>
+                        </td>
+                    </tr>
+                <% }); %>
+            </table>
+        </div>
+    </div>
+
+
+
